@@ -17,11 +17,3 @@
 	return %orig;
 }
 %end
-
-%hook UIResponder
--(void)doesNotRecognizeSelector:(SEL)selector
-{
-	if (!sel_isEqual(selector, @selector(__im_handleIdentifiers)))
-		%orig;
-}
-%end
